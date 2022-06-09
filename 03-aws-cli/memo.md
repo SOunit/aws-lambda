@@ -17,3 +17,5 @@
   - AWS secret access key: XXXXXXXXXX
   - default region: ca-central-1
   - default output format: json
+- check config
+  - `aws s3 ls`
