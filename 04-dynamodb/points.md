@@ -37,5 +37,28 @@ https://www.youtube.com/watch?v=OfZgHXsYqNE
   - most application needs only one table
   - identify `primary keys` and `indexes` to minimize the number of requests to dynamodb to satisfy each access patterns
 
-- table design
-- url design
+- 1 table for entire application
+
+  - use flexible scheme
+
+    - company
+    - projects
+    - employees
+
+  - identify most suitable `hash key` and `sort key` for each type of record to satisfy the access patterns
+  - identify secondary indexes for additional access patterns that cannot be satisfied with the primary key(`hash key` and `sort key`)
+
+- 5 steps process for data-modeling
+
+  - draw an entity model
+  - identity relationship(1:1, 1:N, N:N)
+  - list down all access pattern for each entity
+  - identify the primary key for each entity
+  - identify the secondary indexes for additional access patterns if necessary
+
+- sample
+  - project management tool
+    - draw an entity model
+    - identify relationship
+      - make many-many to 1-many
+        - projects - employees => projects - projects-employees - employees
